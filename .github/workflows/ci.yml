@@ -1,0 +1,33 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project:
+          - Netflix
+          - project2
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Build Docker image
+        working-directory: ${{ matrix.project }}
+        run: docker build -t ${GITHUB_REPOSITORY}:${{ matrix.project }} .
+
+      - name: Run Tests
+        working-directory: ${{ matrix.project }}/tests
+        run: |
+          docker run -t ${GITHUB_REPOSITORY}:${{ matrix.project }} pytest

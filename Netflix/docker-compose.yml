@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  content-distribution-and-cache-management:
+    build:
+      context: ./content-distribution-and-cache-management
+      dockerfile: Dockerfile
+
+
+  movie-marathon-and-permutation:
+    build:
+      context: ./movie-marathon-and-permutation
+      dockerfile: Dockerfile
+
+
+  search-and-recommendation:
+    build:
+      context: ./search-and-recommendation
+      dockerfile: Dockerfile
+
+
+  user-demographics-and-statistics:
+    build:
+      context: ./user-demographics-and-statistics
+      dockerfile: Dockerfile
+
+
+  user-experience-and-history:
+    build:
+      context: ./user-experience-and-history
+      dockerfile: Dockerfile
+
