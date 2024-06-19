@@ -17,9 +17,6 @@ This project aims to improve the user experience on the Netflix platform by impl
 - Cache Management (LRU): Implement a cache with a replacement strategy that replaces the least recently watched title.
 
 
-- Cache Management (LFU): Implement a cache with a replacement strategy that replaces the least frequently watched titles.
-
-
 - Session History Navigation (Stack): Allow users to move back and forth in the history of programs they've just browsed using a stack data structure.
 
 
@@ -65,8 +62,8 @@ Clone this repository to your local machine.
 Build the Docker images for each feature using docker-compose:
 
     docker-compose build
-    Run the Docker containers for the desired feature:
 
+Run the Docker containers for the desired feature:
 
     docker-compose up <service-name>
 
